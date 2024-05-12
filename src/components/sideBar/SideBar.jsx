@@ -18,60 +18,67 @@ const SideBar = () => {
       <div className="top">
         <div className="logo">Shahzod</div>
       </div>
-      <hr />
       <div className="center">
         <ul>
+          <p>Main</p>
           <li>
-            <SpaceDashboardIcon />
+            <SpaceDashboardIcon className="icons"/>
             <span>Dashboard</span>
           </li>
+          <p>Lists</p>
           <li>
-            <SupervisorAccountRoundedIcon/>
+            <SupervisorAccountRoundedIcon className="icons"/>
             <span>Users</span>
           </li>
           <li>
-            <Inventory2RoundedIcon/>
+            <Inventory2RoundedIcon className="icons"/>
             <span>Products</span>
           </li>
           <li>
-            <ListAltOutlinedIcon/>
+            <ListAltOutlinedIcon className="icons"/>
             <span>Orders</span>
           </li>
           <li>
-            <AirportShuttleOutlinedIcon/>
+            <AirportShuttleOutlinedIcon className="icons"/>
             <span>Delivery</span>
           </li>
+          <p>Useful</p>
           <li>
-            <QueryStatsOutlinedIcon/>
+            <QueryStatsOutlinedIcon className="icons"/>
             <span>Stats</span>
           </li>
           <li>
-            <NotificationsActiveOutlinedIcon/>
+            <NotificationsActiveOutlinedIcon className="icons"/>
             <span>Notifications</span>
           </li>
+          <p>Service</p>
           <li>
-            <MonitorHeartOutlinedIcon/>
+            <MonitorHeartOutlinedIcon className="icons"/>
             <span>Sistem Health</span>
           </li>
           <li>
-            <AndroidOutlinedIcon/>
+            <AndroidOutlinedIcon className="icons"/>
             <span>Logos</span>
           </li>
           <li>
-            <EngineeringRoundedIcon/>
+            <EngineeringRoundedIcon className="icons"/>
             <span>Settings</span>
           </li>
+          <p>User</p>
           <li>
-            <SwitchAccountRoundedIcon/>
+            <SwitchAccountRoundedIcon className="icons"/>
             <span>Profile</span>
           </li>
           <li>
-            <MeetingRoomRoundedIcon/>
+            <MeetingRoomRoundedIcon className="icons"/>
             <span>Logout</span>
           </li>
         </ul>
       </div>
-      <div className="bottom">color options</div>
+      <div className="bottom">
+        <div className="colorOption"></div>
+        <div className="colorOption"></div>
+      </div>
     </div>
   );
 };

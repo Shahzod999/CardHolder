@@ -12,12 +12,12 @@ import EngineeringRoundedIcon from "@mui/icons-material/EngineeringRounded";
 import SwitchAccountRoundedIcon from "@mui/icons-material/SwitchAccountRounded";
 import MeetingRoomRoundedIcon from "@mui/icons-material/MeetingRoomRounded";
 import { Link } from "react-router-dom";
-import { selectDark } from "../../state/darkModeSlice";
+import { darkMode } from "../../state/darkModeSlice";
 import { useDispatch } from "react-redux";
 
 const SideBar = () => {
   const dispatch = useDispatch();
-  
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -87,8 +87,8 @@ const SideBar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOption" onClick={() => dispatch(selectDark())}></div>
-        <div className="colorOption"onClick={() => dispatch(selectDark())}></div>
+        <div className="colorOption" onClick={() => dispatch(darkMode())}></div>
+        <div className="colorOption" onClick={() => dispatch(darkMode())}></div>
       </div>
     </div>
   );

@@ -1,9 +1,6 @@
 import Home from "./pages/home/Home";
 // import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Login from "./pages/login/Login";
 import List from "./pages/list/List";
@@ -25,10 +22,6 @@ function App() {
       element: <Home />,
     },
     {
-      path: "/login",
-      element: <Login />,
-    },
-    {
       path: "/users",
       element: <List />,
     },
@@ -38,45 +31,56 @@ function App() {
     },
     {
       path: "/users/new",
-      element:<New inputs={userInputs} title="Add New User" />,
+      element: <New inputs={userInputs} title="Add New User" />,
     },
     {
       path: "/products",
-      element:<List />,
+      element: <List />,
     },
     {
       path: "/products/:productId",
-      element:<Single />,
+      element: <Single />,
     },
     {
       path: "/products/new",
-      element:<New inputs={productInputs} title="Add New Product" />,
+      element: <New inputs={productInputs} title="Add New Product" />,
     },
   ]);
-  
+
+  const prtct = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/:any",
+      element: <Login />,
+    },
+  ]);
+
   return (
     <div className={dark ? "app dark" : "app"}>
-       <RouterProvider router={router} />
+      <RouterProvider router={currentUser ? router : prtct} />
     </div>
   );
 }
 
 export default App;
 
-      // <BrowserRouter>
-      //   <Routes>
-      //     <Route path="/" />
-      //     <Route path="login" element={<Login />} />
-      //     <Route index element={<Home />} />
-      //     <Route path="users">
-      //       <Route index element={<List />} />
-      //       <Route path=":userId" element={<Single />} />
-      //       <Route path="new" element={<New inputs={userInputs} title="Add New User" />} />
-      //     </Route>
-      //     <Route path="products">
-      //       <Route index element={<List />} />
-      //       <Route path=":productId" element={<Single />} />
-      //       <Route path="new" element={<New inputs={productInputs} title="Add New Product" />} />
-      //     </Route>
-      //   </Routes>
-      // </BrowserRouter>
+// <BrowserRouter>
+//   <Routes>
+//     <Route path="/" />
+//     <Route path="login" element={<Login />} />
+//     <Route index element={<Home />} />
+//     <Route path="users">
+//       <Route index element={<List />} />
+//       <Route path=":userId" element={<Single />} />
+//       <Route path="new" element={<New inputs={userInputs} title="Add New User" />} />
+//     </Route>
+//     <Route path="products">
+//       <Route index element={<List />} />
+//       <Route path=":productId" element={<Single />} />
+//       <Route path="new" element={<New inputs={productInputs} title="Add New Product" />} />
+//     </Route>
+//   </Routes>
+// </BrowserRouter>

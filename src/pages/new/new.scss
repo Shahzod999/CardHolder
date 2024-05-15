@@ -12,7 +12,8 @@
       padding: 10px;
       margin: 20px;
       display: flex;
-
+      align-items: center;
+      justify-content: center;
       h1 {
         color: lightgray;
         font-size: 20px;
@@ -61,7 +62,7 @@
           }
 
           button {
-            width: 150px;
+            width: 95%;
             padding: 10px;
             border: none;
             background-color: teal;

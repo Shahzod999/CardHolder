@@ -14,6 +14,7 @@ import MeetingRoomRoundedIcon from "@mui/icons-material/MeetingRoomRounded";
 import { Link } from "react-router-dom";
 import { darkMode } from "../../state/darkModeSlice";
 import { useDispatch } from "react-redux";
+import { logout } from "../../state/authSlice";
 
 const SideBar = () => {
   const dispatch = useDispatch();
@@ -80,7 +81,7 @@ const SideBar = () => {
             <SwitchAccountRoundedIcon className="icons" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={()=>dispatch(logout())}>
             <MeetingRoomRoundedIcon className="icons" />
             <span>Logout</span>
           </li>

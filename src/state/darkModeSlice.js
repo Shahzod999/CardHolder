@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: false,
+  value: JSON.parse(localStorage.getItem("dark")) || false,
 };
 
 export const counterSlice = createSlice({
@@ -10,6 +10,7 @@ export const counterSlice = createSlice({
   reducers: {
     darkMode: (state) => {
       state.value = !state.value;
+      localStorage.setItem("dark", JSON.stringify(state.value))
     },
   },
 });
